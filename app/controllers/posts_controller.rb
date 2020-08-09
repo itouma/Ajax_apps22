@@ -15,10 +15,10 @@ class PostsController < ApplicationController
     if post.checked then
       # 取得したpostのレコードの中にcheckedカラムがあるのでそこのtrueかfalseあるのでtrueなら
       post.update(checked: false)
-      # 既読していれば「既読を解除するためにfalseへ変更」updateする
+      # 既読していれば「既読を解除するためにfalseへ変更」updateするcheckedがtrueなら
     else
       post.update(checked: true)
-      # 既読していなければ「既読にするためtrueへ変更」updateする
+      # 既読していなければ「既読にするためtrueへ変更」updateする。checkedがfalseかnullなら
     end
     
     item = Post.find(params[:id])
